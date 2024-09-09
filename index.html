@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments: 2024-08-02</title>
+    <!-- <link rel="icon" href="image/kmutnb.png"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f2de;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #fffed4;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        .container .image-item {
+            margin-bottom: 150px;
+        }
+        
+        .container img {
+            max-width: 100%;
+            height: auto;
+            /* border-radius: 15px; */
+            margin-bottom: 15px;
+        }
+
+        .container video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        h1, h2, h3{
+            text-align: left;
+
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Assignments: 2024-08-02</h1>
+        <h2><u>Task 1</u></h2>         <!--Task 1 Started Here-->
+
+        <br>
+        <h3>By Phumvit Wongmool, 6601012630068</h3>
+
+        <br><br><br>
+
+        <div class="image-item">
+            <img src="Task 1/image1.png" alt="Image 1">
+            <div class="description">To do a cross compilaion, first do</div>
+            <div class="description">$ sudo apt install gcc-arm-linux-gnueabihf</div>
+            <div class="description">for arm architecture of raspberry pi</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image2.png" alt="Image 2">
+            <div class="description">Change directory to a folder that contained a C script</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image3.png" alt="Image 3">
+            <div class="description">C Script ^</div>
+            <div class="description">use $ nano to edit the script</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image4.png" alt="Image 4">
+            <div class="description">Save changes</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image5.png" alt="Image 5">
+            <div class="description">Compile a test.c to a exucutable file named "test" using</div>
+            <div class="description">$ arm-linux-gnueabihf-gcc -o test test.c</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image6.png" alt="Image 6">
+            <div class="description">Transfer test to raspberry pi in a local network by using</div>
+            <div class="description">$ scp test phumvit@blueberrypi.local:/home/phumvit/cross</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image7.png" alt="Image 7">
+            <div class="description">The exucutable file test is now in the specific directory named cross on raspberry pi</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image8.png" alt="Image 8">
+            <div class="description">Remote raspberry pi using</div>
+            <div class="description">$ ssh phumvit@blueberrypi.local</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image9.png" alt="Image 9">
+            <div class="description">Change directory to the folder that contained a exucutable file test</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image10.png" alt="Image 10">
+            <div class="description">Run test by using $ ./test</div>
+            <div class="description">But in my case, this caused error</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image11.png" alt="Image 11">
+            <div class="description">Determine the file type by using</div>
+            <div class="description">$ file ./test</div>
+            <div class="description">the file is "dynamically linked" when it should be "statically linked"</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image12.png" alt="Image 12">
+            <div class="description">To fix this, remove the old file from raspberry pi</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image13.png" alt="Image 13">
+            <div class="description">And also a file from ubuntu</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image14.png" alt="Image 14">
+            <div class="description">Compile the same script again but force it to be statically linked by using</div>
+            <div class="description">$ arm-linux-gnueabihf-gcc -static -o test test.c</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image15.png" alt="Image 15">
+            <div class="description">Transfer test to raspberry pi in a local network by using</div>
+            <div class="description">$ scp test phumvit@blueberrypi.local:/home/phumvit/cross</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image16.png" alt="Image 16">
+            <div class="description">Do as previous step and the file is now exucutable</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 1/image17.png" alt="Image 17">
+            <div class="description">The file is now "statically linked"</div>
+        </div>
+
+
+        <hr>    <!-- Task 2 Started Here -->
+
+
+        <h2><u>Task 2</u></h2>
+
+        <br>
+        <h3>By Phumvit Wongmool, 6601012630068</h3>
+
+        <br><br><br>
+
+        <div class="image-item">
+            <img src="Task 2/image1.png" alt="Task 2 Image 1">
+            <div class="description">$ ping blueberrypi</div>
+            <div class="description">to check if raspberry pi is connected to a local network or not</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 2/image2.png" alt="Task 2 Image 2">
+            <div class="description">Remote raspberry pi then</div>
+            <div class="description">$ sudo apt update</div>
+            <div class="description">$ sudo apt upgrade</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 2/image3.png" alt="Task 2 Image 3">
+            <div class="description">Install realvnc on raspberry pi using</div>
+            <div class="description">$ sudo apt-get install realvnc-vnc-viewer</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 2/image4.png" alt="Task 2 Image 4">
+            <div class="description">Enable X11-based viewer using</div>
+            <div class="description">$ sudo systemctl enable vncserver-x11-serviced.service</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 2/image5.png" alt="Task 2 Image 5">
+            <div class="description">Raspberry pi is ready to connect</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 2/image6.png" alt="Task 2 Image 6">
+            <div class="description">Download realvnc viewer for windows</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 2/image7.png" alt="Task 2 Image 7">
+            <div class="description">Then connect to raspberry pi using ip address</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 2/image8.png" alt="Task 2 Image 8">
+            <div class="description">Enter raspberry pi username and password</div>
+        </div>
+
+        <div class="image-item">
+            <img src="Task 2/image9.png" alt="Task 2 Image 9">
+            <div class="description">Now we can remote raspberry pi desktop without using external monitor</div>
+        </div>
+
+
+        <hr>    <!-- Task 3 Started Here -->
+
+
+        <h2><u>Task 3</u></h2>
+
+        <br>
+        <h3>By Phumvit Wongmool, 6601012630068</h3>
+
+        <br><br><br>
+
+        <div class="image-item">
+            <img src="Task 3/image1.png" alt="Task 3 Image 1">
+            <div class="description">Follow the instruction on docker installation on debian ( https://docs.docker.com/engine/install/debian/ )</div>
+            <div class="description">This step adds Docker's official GPG key and add the repository to Apt sources</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 3/image2.png" alt="Task 3 Image 2">
+            <div class="description">$ sudo groupadd docker</div>
+            <div class="description">$ sudo usermod -aG docker $USER</div>
+            <div class="description">$ newgrp docker</div>
+            <div class="description">Now we can use docker without superuser</div>
+        </div>
+        
+
+        <hr>    <!-- Task 4 Started Here -->
+
+
+        <h2><u>Task 4</u></h2>
+
+        <br>
+        <h3>By Phumvit Wongmool, 6601012630068</h3>
+
+        <br><br><br>
+
+        <div class="image-item">
+            <img src="Task 4/image1.png" alt="Task 4 Image 1">
+            <div class="description">Create docker image for arduino cli using dockerfile</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image2.png" alt="Task 4 Image 2">
+            <div class="description">Dockerfile for arm64/debian-bookworm</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image3.png" alt="Task 4 Image 3">
+            <div class="description">Check docker images and containers by</div>
+            <div class="description">$ docker images</div>
+            <div class="description">$ docker ps -a</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image4.png" alt="Task 4 Image 4">
+            <div class="description">$ docker run -it --name arduino-cli --device=/dev/ttyACM0 -v /home/phumvit/Arduino-sketch/Blink:/workspace arduino-cli:arm64-bookworm</div>
+            <div class="description">to use arduino cli under docker with a directory where we store arduino sketch</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image5.png" alt="Task 4 Image 5">
+            <div class="description">$ arduino-cli core update-index</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image6.png" alt="Task 4 Image 6">
+            <div class="description">$ arduino-cli core install arduino:avr</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image7.png" alt="Task 4 Image 7">
+            <div class="description">Check a connected board by</div>
+            <div class="description">$ arduino-cli board list</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image8.png" alt="Task 4 Image 8">
+            <div class="description">Arduino blink sketch in workspace directory</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image9.png" alt="Task 4 Image 9">
+            <div class="description">Compile a sketch by</div>
+            <div class="description">$ arduino-cli compile --fqbn arduino:avr:uno /workspace/workspace.ino</div>
+        </div>
+        <div class="image-item">
+            <img src="Task 4/image10.png" alt="Task 4 Image 10">
+            <div class="description">Check if we compile the correct sketch, then upload by</div>
+            <div class="description">$ arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /workspace/workspace.ino</div>
+        </div>
+
+        <div class="image-item">
+            <video autoplay muted loop
+            height="1000">
+                <source src="Task 4/IMG_4512.mov">
+            </video>
+            <div class="description">Blink LED 300 ms delayed</div>
+        </div>
+
+        <hr>
+
+    </div>
+</body>
+</html>
+
+<!-- <div class="image-item">
+            <video autoplay muted loop
+            height="1000">
+                <source src="Task 1/IMG_4040.mov">
+            </video>
+            <div class="description">Blink LED 250 ms delayed</div>
+        </div> -->
